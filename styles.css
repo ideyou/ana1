@@ -1,0 +1,123 @@
+* Reset bÃ¡sico */ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+
+/* Corpo */
+body {
+    font-family: 'Times New Roman', Times, serif, sans-serif;
+    background-color: #000000;
+    color: #000000;
+    background-image: url('background.png');
+    background-size: 80% auto;
+    background-repeat: no-repeat;
+    background-position: center 80%;
+}
+
+
+/* Container estilo Bootstrap */
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+}
+
+
+/* CentralizaÃ§Ã£o */
+.text-center {
+    text-align: center;
+}
+
+
+/* Avatar */
+.avatar {
+    width: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+
+/* TÃ­tulos */
+.title {
+    color: #c547ffa2;
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+
+.subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #c547ffa2;
+}
+
+
+/* Links */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+/* BotÃµes estilo Bootstrap */
+.btn {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+
+/* Variantes */
+.btn-primary {
+    background-color: #43038da2;
+    color: rgb(167, 89, 240);
+}
+
+
+.btn-secondary {
+    background-color: #d607cc67;
+    color: rgb(228, 75, 228);
+}
+
+
+.btn-dark {
+    background-color: #19258198;
+    color: rgb(134, 125, 255);
+}
+
+
+.btn-outline {
+    border: 1px solid #ffffff;
+    background: transparent;
+}
+
+
+/* Hover */
+.btn:hover {
+    opacity: 0.8;
+}
+
+
+/* Tema escuro */
+.dark-mode {
+    background-color: #ffffff;
+    color: #f1f1f1;
+}
+
+
+.dark-mode .btn-outline {
+    color: #ffffff;
+    border-color: #f1f1f1;
+}
