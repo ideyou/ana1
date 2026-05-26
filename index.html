@@ -9,10 +9,11 @@
 </head>
 
 
+
 <body>
    <div class="container text-center">
        <img src="chatana.avif" alt="Foto" class="avatar">
-       <h1 class="title"> Wacmaker🔮💜
+       <h1 class="title"> Wacmkaer🔮💜
 
        </h1>
        <p class="subtitle">Fanfiction</p>
@@ -21,9 +22,122 @@
            <a href="https://www.wattpad.com/1345978540" class="btn btn-secondary">Jeito Bandida</a>
            <a href="https://www.wattpad.com/1606607713" class="btn btn-dark">Entre nós</a>
        </div>
+       <p classe="subtitle">"Fanfics que brilham mais que galáxias"</p>
        
    </div>
    <script src="script.js"></script>
+   
+   <canvas id="galaxy"></canvas>
+
+<div id="stars-container"></div>
+
+<script>
+/* =========================
+CANVAS GALÁXIA
+========================= */
+
+const canvas = document.getElementById("galaxy");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+window.addEventListener("resize", () => {
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+});
+
+document.addEventListener("mousemove", (e) => {
+
+/* PARTÍCULAS GRANDES */
+for (let i = 0; i < 5; i++) {
+
+particles.push({
+x: e.clientX,
+y: e.clientY,
+size: Math.random() * 4 + 1,
+speedX: (Math.random() - 0.5) * 2,
+speedY: (Math.random() - 0.5) * 2,
+opacity: 1
+});
+}
+
+/* ESTRELINHAS PEQUENAS */
+for (let i = 0; i < 2; i++) {
+
+const star = document.createElement("div");
+
+star.classList.add("star");
+
+document.body.appendChild(star);
+
+let x = e.pageX + (Math.random() * 30 - 15);
+let y = e.pageY + (Math.random() * 30 - 15);
+
+star.style.left = x + "px";
+star.style.top = y + "px";
+
+let size = Math.random() * 6 + 2;
+
+star.style.width = size + "px";
+star.style.height = size + "px";
+
+setTimeout(() => {
+star.remove();
+}, 1000);
+}
+});
+
+/* ANIMAÇÃO DO CANVAS */
+
+function animate() {
+
+ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+for (let i = 0; i < particles.length; i++) {
+
+let p = particles[i];
+
+p.x += p.speedX;
+p.y += p.speedY;
+
+p.opacity -= 0.02;
+
+ctx.beginPath();
+
+const gradient = ctx.createRadialGradient(
+p.x,
+p.y,
+0,
+p.x,
+p.y,
+p.size * 6
+);
+
+gradient.addColorStop(0, `rgba(255,255,255,${p.opacity})`);
+gradient.addColorStop(0.3, `rgba(168,85,247,${p.opacity})`);
+gradient.addColorStop(0.6, `rgba(126,36,179,${p.opacity})`);
+gradient.addColorStop(1, `rgba(59,130,246,0)`);
+
+ctx.fillStyle = gradient;
+
+ctx.arc(p.x, p.y, p.size * 6, 0, Math.PI * 2);
+
+ctx.fill();
+
+if (p.opacity <= 0) {
+particles.splice(i, 1);
+i--;
+}
+}
+
+requestAnimationFrame(animate);
+}
+
+animate();
+</script>
 </body>
 
 

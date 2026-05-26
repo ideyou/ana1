@@ -14,7 +14,7 @@ body {
 body {
     font-family: 'Times New Roman', Times, serif, sans-serif;
     background-color: #000000;
-    color: #000000;
+    color: #f0a5ffee;
     background-image: url('background.png');
     background-size: 80% auto;
     background-repeat: no-repeat;
@@ -24,9 +24,9 @@ body {
 
 /* Container estilo Bootstrap */
 .container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
+    max-width: 320px;
+    margin: 70px auto;
+    padding: 110px;
 }
 
 
@@ -46,16 +46,16 @@ body {
 
 /* TÃ­tulos */
 .title {
-    color: #c547ffa2;
-    font-size: 24px;
-    margin-bottom: 5px;
+    color: #db8cff;
+    font-size: 30px;
+    margin-bottom: 10px;
 }
 
 
 .subtitle {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #c547ffa2;
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: #dd92ff;
 }
 
 
@@ -81,19 +81,19 @@ body {
 
 /* Variantes */
 .btn-primary {
-    background-color: #43038da2;
+    background-color: #3e166bb2;
     color: rgb(167, 89, 240);
 }
 
 
 .btn-secondary {
-    background-color: #d607cc67;
-    color: rgb(228, 75, 228);
+    background-color: #d607cc81;
+    color: rgb(233, 91, 233);
 }
 
 
 .btn-dark {
-    background-color: #19258198;
+    background-color: #192581ab;
     color: rgb(134, 125, 255);
 }
 
@@ -121,3 +121,209 @@ body {
     color: #ffffff;
     border-color: #f1f1f1;
 }
+
+/* ===== CAIXA CENTRAL EM DESTAQUE ===== */
+.container,
+.profile,
+.linktree,
+.center-box {
+    background: rgba(10, 10, 25, 0.45);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+
+    border: 2px solid rgba(71, 19, 192, 0.527);
+    border-radius: 15px;
+
+    padding: 35px;
+    width: 420px;
+
+    box-shadow:
+        0 0 25px rgba(140, 0, 255, 0.411),
+        0 0 60px rgba(80, 0, 255, 0.35),
+        inset 0 0 20px rgba(255,255,255,0.05);
+
+    position: relative;
+    z-index: 2;
+
+    animation: brilho 4s ease-in-out infinite;
+}
+
+/* ===== FOTO ===== */
+.container img,
+.profile img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+
+    border: 3px solid #b14cff;
+
+    box-shadow:
+        0 0 20px #a855f7,
+        0 0 40px #7e24b3;
+
+    margin-bottom: 10px;
+}
+
+/* ===== NOME ===== */
+.container h1,
+.profile h1 {
+    color: #e6b3ff;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow:
+        0 0 10px #c084fc,
+        0 0 25px #9333ea;
+
+    margin-bottom: 10px;
+}
+
+/* ===== TEXTO ===== */
+.container p,
+.profile p {
+    color: #f3d9ff;
+    font-size: 18px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.4);
+}
+
+/* ===== BOTÕES ===== */
+.container a,
+.profile a {
+    display: block;
+
+    margin: 14px auto;
+    padding: 14px;
+
+    width: 100%;
+    max-width: 280px;
+
+    border-radius: 14px;
+
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+
+    background: linear-gradient(
+        90deg,
+        rgba(126,36,179,0.85),
+        rgba(90,40,255,0.85)
+    );
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 0 15px rgba(168,85,247,0.4);
+
+    transition: 0.4s;
+}
+
+/* EFEITO HOVER */
+.container a:hover,
+.profile a:hover {
+    transform: scale(1.06);
+
+    box-shadow:
+        0 0 20px #c084fc,
+        0 0 40px #7e24b3;
+
+    background: linear-gradient(
+        90deg,
+        #a855f7,
+        #7c3aed
+    );
+}
+
+/* ===== ANIMAÇÃO ===== */
+@keyframes brilho {
+    0% {
+        box-shadow:
+            0 0 20px rgba(140,0,255,0.4),
+            0 0 40px rgba(80,0,255,0.2);
+    }
+
+    50% {
+        box-shadow:
+            0 0 35px rgba(180,0,255,0.7),
+            0 0 70px rgba(120,0,255,0.5);
+    }
+
+    100% {
+        box-shadow:
+            0 0 20px rgba(140,0,255,0.4),
+            0 0 40px rgba(80,0,255,0.2);
+    }
+}
+
+
+/* =========================
+GALÁXIA FUNDO
+========================= */
+
+#galaxy{
+position: fixed;
+top: 0;
+left: 0;
+
+width: 100%;
+height: 100%;
+
+pointer-events: none;
+
+z-index: 1;
+}
+
+/* =========================
+ESTRELAS
+========================= */
+
+#stars-container{
+position: fixed;
+inset: 0;
+
+pointer-events: none;
+
+z-index: 2;
+}
+
+.star{
+position: absolute;
+
+border-radius: 50%;
+
+background: white;
+
+box-shadow:
+0 0 8px white,
+0 0 15px #a855f7,
+0 0 25px #7e24b3,
+0 0 40px #3b82f6;
+
+animation: galaxia 1s linear forwards;
+}
+
+@keyframes galaxia {
+
+0%{
+opacity: 1;
+transform: scale(1) translateY(0px);
+}
+
+50%{
+opacity: 1;
+transform: scale(1.8) translateY(-10px);
+}
+
+100%{
+opacity: 0;
+transform: scale(0) translateY(-25px);
+}
+}
+
+/* =========================
+CONTEÚDO CENTRAL
+========================= */
+
+.container{
+position: relative;
+z-index: 10;
+}
+
