@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Itália</title>
+
+<style>
+
+/* FUNDO */
+
+body{
+    margin:0;
+    background:#ff7d7d4f;
+    font-family:Arial;
+    color:rgb(255, 233, 233);
+}
+
+/* TOPO */
+
+.topo{
+
+    text-align:center;
+
+    padding:70px 20px 40px;
+}
+
+.topo h1{
+
+    font-size:90px;
+
+    margin:0;
+
+    background:
+    linear-gradient(45deg,#ff3434,#ffffff86);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.topo p{
+
+    max-width:px;
+
+    margin:auto;
+
+    margin-top:20px;
+
+    font-size:24px;
+
+    color:#ffffff;
+
+    line-height:1.8;
+}
+
+/* GALERIA */
+
+.galeria{
+
+    width:92%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:20px;
+
+    padding-bottom:80px;
+}
+
+/* CARDS */
+
+.card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    transition:0.5s;
+}
+
+/* IMAGEM */
+
+.card img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:0.7s;
+}
+
+/* TAMANHOS DIFERENTES */
+
+.grande{
+    grid-column:span 2;
+    grid-row:span 2;
+    height:600px;
+}
+
+.media{
+    height:290px;
+}
+
+.alta{
+    grid-row:span 2;
+    height:600px;
+}
+
+/* EFEITOS */
+
+.card:hover{
+
+    transform:translateY(-10px);
+}
+
+.card:hover img{
+
+    transform:scale(1.1);
+}
+
+/* ESCURECER */
+
+.overlay{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+    transparent,
+    rgba(248, 216, 216, 0));
+
+    top:0;
+    left:0;
+}
+
+/* TEXTO */
+
+.info{
+
+    position:absolute;
+
+    bottom:0;
+
+    padding:30px;
+}
+
+.info h2{
+
+    margin:0;
+
+    font-size:40px;
+}
+
+.info p{
+
+    margin-top:12px;
+
+    color:#ffffff;
+
+    line-height:1.7;
+
+    font-size:18px;
+}
+
+/* BOTÃO */
+
+.botao{
+
+    display:block;
+
+    width:250px;
+
+    margin:50px auto;
+
+    text-align:center;
+
+    padding:18px;
+
+    border-radius:20px;
+
+    text-decoration:none;
+
+    color:rgb(255, 255, 255);
+
+    font-size:20px;
+
+    background:
+    linear-gradient(45deg,#ff8989a6,#ff5686a2);
+
+    transition:0.4s;
+}
+
+.botao:hover{
+
+    transform:scale(1.05);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+.galeria{
+
+    grid-template-columns:1fr;
+}
+
+.grande,
+.media,
+.alta{
+
+    grid-column:auto;
+    grid-row:auto;
+
+    height:350px;
+}
+
+.topo h1{
+    font-size:70px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOPO -->
+
+<section class="topo">
+
+<h1>Itália</h1>
+
+<p>
+
+Descubra cidades cinematográficas,
+paisagens históricas e lugares
+inesquecíveis da Itália.
+
+</p>
+
+</section>
+
+<!-- GALERIA -->
+
+<section class="galeria">
+
+<!-- COLISEU -->
+
+<div class="card grande">
+
+<img src="coliseu.jpeg">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Coliseu</h2>
+
+<p>
+O maior símbolo da Roma Antiga
+e uma das construções mais famosas do mundo.
+</p>
+
+</div>
+
+</div>
+
+<!-- VENEZA -->
+
+<div class="card media">
+
+<img src="veneza.jpeg">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Veneza</h2>
+
+<p>
+Canais românticos e paisagens mágicas.
+</p>
+
+</div>
+
+</div>
+
+<!-- PISA -->
+
+<div class="card media">
+
+<img src="torre.jpeg">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Torre de Pisa</h2>
+
+<p>
+A famosa torre inclinada da Itália.
+</p>
+
+</div>
+
+</div>
+
+<!-- AMALFI -->
+
+<div class="card alta">
+
+<img src="amalfi.webp">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Costa Amalfitana</h2>
+
+<p>
+Mar cristalino e cidades coloridas
+em falésias cinematográficas.
+</p>
+
+</div>
+
+</div>
+
+<!-- MILÃO -->
+
+<div class="card media">
+
+<img src="milao.jpeg">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Milão</h2>
+
+<p>
+Moda, luxo e arquitetura moderna.
+</p>
+
+</div>
+
+</div>
+
+<!-- FLORENÇA -->
+
+<div class="card grande">
+
+<img src="Florenca.jpg">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Florença</h2>
+
+<p>
+Berço do Renascimento e da arte italiana.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<a href="index.html" class="botao">
+Voltar ao Início
+</a>
+
+</body>
+</html>

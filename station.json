@@ -1,0 +1,12 @@
+{
+  "color": "#fff",
+  "background_color": "rgb(99, 18, 126)",
+  "icons": [
+    {
+      "src": "profile.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ],
+  "name": "Ana Luiza"
+}

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Tokyo</title>
+
+<style>
+
+/* FUNDO */
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:#05010a;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* NEON FUNDO */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    background:
+
+    radial-gradient(circle at top left,
+    rgba(255,0,128,0.15),
+    transparent 30%),
+
+    radial-gradient(circle at bottom right,
+    rgba(0,255,255,0.12),
+    transparent 30%),
+
+    radial-gradient(circle at center,
+    rgba(180,0,255,0.08),
+    transparent 40%);
+
+    z-index:-2;
+}
+
+/* GRID LUZ */
+
+.grid{
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    background-image:
+    linear-gradient(rgba(55, 10, 255, 0.233) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(111, 0, 255, 0.349) 1px, transparent 1px);
+
+    background-size:50px 50px;
+
+    z-index:-1;
+}
+
+/* TOPO */
+
+.topo{
+
+    text-align:center;
+
+    padding:90px 20px 60px;
+}
+
+.topo h1{
+
+    font-size:120px;
+
+    margin:0;
+
+    color:#fff;
+
+    text-shadow:
+    0 0 10px #ff00ff,
+    0 0 25px #e100ff,
+    0 0 50px #6200ff,
+    0 0 80px #4a36ff;
+}
+
+.topo p{
+
+    max-width:900px;
+
+    margin:auto;
+
+    margin-top:25px;
+
+    font-size:24px;
+
+    line-height:1.9;
+
+    color:#d9d9ff;
+}
+
+/* GALERIA */
+
+.galeria{
+
+    width:92%;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(12,1fr);
+
+    gap:25px;
+
+    padding-bottom:100px;
+}
+
+/* CARDS */
+
+.card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    transition:0.6s;
+
+    background:#111;
+}
+
+/* TAMANHOS DIFERENTES */
+
+.grande{
+
+    grid-column:span 7;
+    height:650px;
+}
+
+.alta{
+
+    grid-column:span 5;
+    height:650px;
+}
+
+.media{
+
+    grid-column:span 4;
+    height:350px;
+}
+
+/* IMAGEM */
+
+.card img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:0.8s;
+}
+
+/* OVERLAY */
+
+.overlay{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    top:0;
+    left:0;
+
+    background:
+    linear-gradient(
+    transparent,
+    rgba(12, 11, 11, 0.61));
+}
+
+/* TEXTO */
+
+.info{
+
+    position:absolute;
+
+    bottom:0;
+
+    padding:30px;
+}
+
+.info h2{
+
+    margin:0;
+
+    font-size:42px;
+
+    text-shadow:
+    0 0 10px rgba(235, 226, 226, 0.767);
+}
+
+.info p{
+
+    margin-top:15px;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#e9e9ff;
+}
+
+/* HOVER */
+
+.card:hover{
+
+    transform:
+    translateY(-12px)
+    scale(1.02);
+
+    box-shadow:
+    0 0 25px rgba(156, 17, 221, 0.877),
+    0 0 45px rgba(0, 26, 255, 0.733);
+}
+
+.card:hover img{
+
+    transform:scale(1.12);
+}
+
+/* BOTÃO */
+
+.botao{
+
+    display:block;
+
+    width:270px;
+
+    margin:30px auto 80px;
+
+    text-align:center;
+
+    padding:18px;
+
+    border-radius:20px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:22px;
+
+    background:
+    linear-gradient(45deg,#ff00ffe1,#0c8fdbf1);
+
+    transition:0.4s;
+
+    box-shadow:
+    0 0 20px rgba(129, 7, 129, 0.664);
+}
+
+.botao:hover{
+
+    transform:scale(1.05);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+.galeria{
+
+    grid-template-columns:1fr;
+}
+
+.grande,
+.alta,
+.media{
+
+    grid-column:auto;
+
+    height:380px;
+}
+
+.topo h1{
+
+    font-size:70px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- GRID -->
+
+<div class="grid"></div>
+
+<!-- TOPO -->
+
+<section class="topo">
+
+<h1>Tokyo</h1>
+
+<p>
+
+Explore uma cidade futurista cheia
+de luzes neon, tecnologia avançada,
+templos históricos e ruas que parecem
+saídas de um filme cyberpunk.
+
+</p>
+
+</section>
+
+<!-- GALERIA -->
+
+<section class="galeria">
+
+<!-- SHIBUYA -->
+
+<div class="card grande">
+
+<img src="shibuya.jpg">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Shibuya</h2>
+
+<p>
+O cruzamento mais famoso do Japão,
+repleto de telas gigantes e luzes neon.
+</p>
+
+</div>
+</div>
+
+<!-- AKIHABARA -->
+
+<div class="card alta">
+
+<img src="akihabara.jpg">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Akihabara</h2>
+
+<p>
+O paraíso gamer e tecnológico
+mais famoso de Tokyo.
+</p>
+
+</div>
+</div>
+
+<!-- TEMPLOS -->
+
+<div class="card media">
+
+<img src="templo-tokyo.jpg">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Templos</h2>
+
+<p>
+História e tradição japonesa
+em meio à cidade futurista.
+</p>
+
+</div>
+</div>
+
+<!-- TOKYO TOWER -->
+
+<div class="card media">
+
+<img src="tokyo-tower.jpg">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Tokyo Tower</h2>
+
+<p>
+Uma das vistas mais incríveis
+da cidade iluminada.
+</p>
+
+</div>
+</div>
+
+<!-- RUAS NEON -->
+
+<div class="card media">
+
+<img src="neon.jpg">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Noites Neon</h2>
+
+<p>
+Ruas vibrantes e cinematográficas
+cheias de energia e luzes.
+</p>
+
+</div>
+</div>
+
+</section>
+
+<!-- BOTÃO -->
+
+<a href="index.html" class="botao">
+Voltar ao Início
+</a>
+
+</body>
+</html>

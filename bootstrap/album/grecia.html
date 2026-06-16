@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grécia</title>
+
+<style>
+
+/* FUNDO */
+
+body{
+    margin:0;
+    font-family:Arial;
+    background:
+    linear-gradient(180deg,#072d74,#3a8efdc7,#44aacc);
+
+    color:white;
+
+    overflow-x:hidden;
+}
+
+/* BOLHAS */
+
+.bolha{
+
+    position:fixed;
+
+    border-radius:50%;
+
+    background:rgba(255, 255, 255, 0.199);
+
+    animation:flutuar 10s infinite linear;
+}
+
+.b1{
+    width:200px;
+    height:200px;
+    left:-50px;
+    top:100px;
+}
+
+.b2{
+    width:120px;
+    height:120px;
+    right:50px;
+    top:300px;
+}
+
+.b3{
+    width:180px;
+    height:180px;
+    left:40%;
+    bottom:-50px;
+}
+
+@keyframes flutuar{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-20px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+/* TOPO */
+
+.topo{
+
+    text-align:center;
+
+    padding:80px 20px 50px;
+
+    position:relative;
+}
+
+.topo h1{
+
+    font-size:110px;
+
+    margin:0;
+
+    color:white;
+
+    text-shadow:
+    0 0 20px rgba(255,255,255,0.7),
+    0 0 40px rgba(0,180,255,0.6);
+}
+
+.topo p{
+
+    max-width:850px;
+
+    margin:auto;
+
+    margin-top:20px;
+
+    font-size:24px;
+
+    line-height:1.8;
+
+    color:#eef7ff;
+}
+
+/* GALERIA */
+
+.galeria{
+
+    width:92%;
+
+    margin:auto;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:30px;
+
+    padding-bottom:100px;
+}
+
+/* CARDS */
+
+.card{
+
+    width:350px;
+
+    height:500px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:35px;
+
+    transition:0.5s;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 20px rgba(255, 255, 255, 0.562);
+
+    transform:rotate(-2deg);
+}
+
+/* CARDS DIFERENTES */
+
+.card:nth-child(even){
+
+    transform:rotate(2deg);
+}
+
+/* IMAGEM */
+
+.card img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    transition:0.7s;
+}
+
+/* EFEITO */
+
+.card:hover{
+
+    transform:
+    scale(1.05)
+    rotate(0deg);
+
+    z-index:5;
+}
+
+.card:hover img{
+
+    transform:scale(1.12);
+}
+
+/* OVERLAY */
+
+.overlay{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    top:0;
+    left:0;
+
+    background:
+    linear-gradient(
+    transparent,
+    rgba(202, 192, 192, 0));
+}
+
+/* TEXTO */
+
+.info{
+
+    position:absolute;
+
+    bottom:0;
+
+    padding:30px;
+}
+
+.info h2{
+
+    margin:0;
+
+    font-size:40px;
+}
+
+.info p{
+
+    margin-top:15px;
+
+    line-height:1.8;
+
+    color:#e8f7ff;
+
+    font-size:18px;
+}
+
+/* BOTÃO */
+
+.botao{
+
+    display:block;
+
+    width:260px;
+
+    margin:20px auto 80px;
+
+    text-align:center;
+
+    padding:18px;
+
+    border-radius:20px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:22px;
+
+    background:
+    linear-gradient(45deg,#48cae4,#0077b6);
+
+    transition:0.4s;
+}
+
+.botao:hover{
+
+    transform:scale(1.05);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+.topo h1{
+    font-size:70px;
+}
+
+.card{
+
+    width:100%;
+    max-width:400px;
+
+    transform:none !important;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- BOLHAS -->
+
+<div class="bolha b1"></div>
+<div class="bolha b2"></div>
+<div class="bolha b3"></div>
+
+<!-- TOPO -->
+
+<section class="topo">
+
+<h1>Grécia</h1>
+
+<p>
+
+Descubra praias cristalinas,
+ilhas cinematográficas e cidades
+cheias de energia e história.
+
+</p>
+
+</section>
+
+<!-- GALERIA -->
+
+<section class="galeria">
+
+<!-- SANTORINI -->
+
+<div class="card">
+
+<img src="santorini.avif">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Santorini</h2>
+
+<p>
+Casas brancas, mar azul neon
+e pores do sol inesquecíveis.
+</p>
+
+</div>
+</div>
+
+<!-- MYKONOS -->
+
+<div class="card">
+
+<img src="mykonos.png">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Mykonos</h2>
+
+<p>
+Praias luxuosas, festas
+e ruas super fotogênicas.
+</p>
+
+</div>
+</div>
+
+<!-- ATENAS -->
+
+<div class="card">
+
+<img src="atenas.jpeg">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Atenas</h2>
+
+<p>
+Templos históricos e arquitetura
+que marcou a humanidade.
+</p>
+
+</div>
+</div>
+
+<!-- PRAIAS -->
+
+<div class="card">
+
+<img src="praia-grecia.jpeg">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Praias Gregas</h2>
+
+<p>
+Águas cristalinas e cenários
+que parecem um paraíso.
+</p>
+
+</div>
+</div>
+
+</section>
+
+<!-- BOTÃO -->
+
+<a href="index.html" class="botao">
+Voltar ao Início
+</a>
+
+</body>
+</html>

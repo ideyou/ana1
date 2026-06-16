@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Finlândia</title>
+
+<style>
+
+/* FUNDO */
+
+body{
+    margin:0;
+    background:#000000;
+    font-family:Arial;
+    overflow-x:hidden;
+    color:#fff0f0;
+}
+
+/* AURORA */
+
+.aurora{
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    background:
+    radial-gradient(circle at top,
+    rgba(26, 240, 255, 0.445),
+    transparent 35%),
+
+    radial-gradient(circle at bottom,
+    rgba(13, 220, 247, 0.418),
+    transparent 40%);
+
+    filter:blur(60px);
+
+    animation:aurora 12s infinite alternate;
+
+    z-index:-3;
+}
+
+@keyframes aurora{
+
+    from{
+        transform:translateY(0px);
+    }
+
+    to{
+        transform:translateY(-40px);
+    }
+}
+
+/* ESTRELAS */
+
+.estrelas{
+
+    position:fixed;
+
+    width:100%;
+    height:100%;
+
+    background-image:
+    radial-gradient(white 1px, transparent 1px);
+
+    background-size:70px 70px;
+
+    opacity:0.15;
+
+    z-index:-2;
+}
+
+/* TOPO */
+
+.topo{
+
+    text-align:center;
+
+    padding:90px 20px 60px;
+}
+
+.topo h1{
+
+    font-size:110px;
+
+    margin:0;
+
+    letter-spacing:8px;
+
+    background:
+    linear-gradient(
+    45deg,
+    #ffffff,
+    #90f1efd8,
+    #37ffe4c0);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+    text-shadow:
+    0 0 30px rgba(16, 255, 235, 0.747);
+}
+
+.topo p{
+
+    max-width:900px;
+
+    margin:auto;
+
+    margin-top:25px;
+
+    font-size:21px;
+
+    line-height:1.9;
+
+    color:#a2ffff;
+}
+
+/* TIMELINE */
+
+.timeline{
+
+    position:relative;
+
+    width:90%;
+
+    margin:auto;
+
+    padding-bottom:100px;
+}
+
+/* LINHA CENTRAL */
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    width:4px;
+
+    height:100%;
+
+    background:
+    linear-gradient(
+    transparent,
+    #00f5d4,
+    transparent);
+
+    transform:translateX(-50%);
+}
+
+/* ITEM */
+
+.item{
+
+    position:relative;
+
+    width:50%;
+
+    padding:40px;
+    box-sizing:border-box;
+}
+
+/* ESQUERDA */
+
+.left{
+
+    left:0;
+}
+
+/* DIREITA */
+
+.right{
+
+    left:50%;
+}
+
+/* CARD */
+
+.card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:35px;
+
+    background:#0f172a;
+
+    box-shadow:
+    0 0 25px rgba(255,255,255,0.05);
+
+    transition:0.6s;
+}
+
+/* IMAGEM */
+
+.card img{
+
+    width:100%;
+
+    height:450px;
+
+    object-fit:cover;
+
+    transition:0.8s;
+}
+
+/* OVERLAY */
+
+.overlay{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    top:0;
+    left:0;
+
+    background:
+    linear-gradient(
+    transparent,
+    rgba(0,0,0,0.95));
+}
+
+/* INFO */
+
+.info{
+
+    position:absolute;
+
+    bottom:0;
+
+    padding:30px;
+}
+
+.info h2{
+
+    margin:0;
+
+    font-size:45px;
+}
+
+.info p{
+
+    margin-top:15px;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#e8ffff;
+}
+
+/* BOLINHA */
+
+.bola{
+
+    position:absolute;
+
+    top:50%;
+
+    width:24px;
+    height:24px;
+
+    border-radius:50%;
+
+    background:#5dffe9;
+
+    box-shadow:
+    0 0 20px #2bc3ff;
+}
+
+.left .bola{
+
+    right:-12px;
+}
+
+.right .bola{
+
+    left:-12px;
+}
+
+/* HOVER */
+
+.card:hover{
+
+    transform:scale(1.03);
+
+    box-shadow:
+    0 0 35px rgba(16, 247, 255, 0.603);
+}
+
+.card:hover img{
+
+    transform:scale(1.1);
+}
+
+/* BOTÃO */
+
+.botao{
+
+    display:block;
+
+    width:280px;
+
+    margin:20px auto 80px;
+
+    text-align:center;
+
+    padding:20px;
+
+    border-radius:25px;
+
+    text-decoration:none;
+
+    color:white;
+
+    font-size:22px;
+
+    background:
+    linear-gradient(
+    45deg,
+    #00f5d4a4,
+    #00bbf9bd);
+
+    transition:0.4s;
+}
+
+.botao:hover{
+
+    transform:scale(1.05);
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+.timeline::before{
+    left:20px;
+}
+
+.item{
+
+    width:100%;
+
+    left:0;
+
+    padding-left:60px;
+}
+
+.bola{
+
+    left:8px !important;
+}
+
+.topo h1{
+
+    font-size:70px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- AURORA -->
+
+<div class="aurora"></div>
+
+<!-- ESTRELAS -->
+
+<div class="estrelas"></div>
+
+<!-- TOPO -->
+
+<section class="topo">
+
+<h1>Finlândia</h1>
+
+<p>
+
+Uma jornada pelo país das auroras,
+florestas congeladas,
+vilas mágicas e noites silenciosas.
+
+</p>
+
+</section>
+
+<!-- TIMELINE -->
+
+<section class="timeline">
+
+<!-- AURORA -->
+
+<div class="item left">
+
+<div class="bola"></div>
+
+<div class="card">
+
+<img src="aurora.jpg">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Aurora Boreal</h2>
+
+<p>
+
+Luzes verdes dançando
+no céu congelado do norte.
+
+</p>
+
+</div>
+</div>
+</div>
+
+<!-- HELSINQUE -->
+
+<div class="item right">
+
+<div class="bola"></div>
+
+<div class="card">
+
+<img src="hel.webp">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Helsinque</h2>
+
+<p>
+
+Uma cidade moderna coberta
+por neve e arquitetura nórdica.
+
+</p>
+
+</div>
+</div>
+</div>
+
+<!-- LAPÔNIA -->
+
+<div class="item left">
+
+<div class="bola"></div>
+
+<div class="card">
+
+<img src="laponia.jpg">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Lapônia</h2>
+
+<p>
+
+Paisagens congeladas,
+renas e florestas mágicas.
+
+</p>
+
+</div>
+</div>
+</div>
+
+<!-- PAPAI NOEL -->
+
+<div class="item right">
+
+<div class="bola"></div>
+
+<div class="card">
+
+<img src="papainoel.jpg">
+
+<div class="overlay"></div>
+
+<div class="info">
+
+<h2>Vila do Papai Noel</h2>
+
+<p>
+
+Um lugar mágico iluminado
+pela neve e pelas luzes do inverno.
+
+</p>
+
+</div>
+</div>
+</div>
+
+</section>
+
+<!-- BOTÃO -->
+
+<a href="index.html" class="botao">
+
+Voltar ao Início
+
+</a>
+
+</body>
+</html>
